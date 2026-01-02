@@ -26,7 +26,7 @@ const SettingsItem = ({
 }: settingsItemProps) => {
   return (
     <TouchableOpacity
-      className="flex flex-row items-center justify-between py-3"
+      className="flex flex-row items-center justify-between"
       onPress={onPress}
       {...props}
     >
