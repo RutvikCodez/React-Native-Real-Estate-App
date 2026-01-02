@@ -1,7 +1,7 @@
 import React from "react";
 import { Tabs } from "expo-router";
 import TabBarIcon from "@/components/TabBarIcon";
-import icons from "@/constants/icons";
+import { tabs } from "@/constants/data";
 
 const TabsLayout = () => {
   return (
@@ -17,36 +17,19 @@ const TabsLayout = () => {
         },
       }}
     >
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: "Home",
-          headerShown: false,
-          tabBarIcon: ({ focused }) => (
-            <TabBarIcon focused={focused} icon={icons.home} title="Home" />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: "Explore",
-          headerShown: false,
-          tabBarIcon: ({ focused }) => (
-            <TabBarIcon focused={focused} icon={icons.search} title="Home" />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="profile"
-        options={{
-          title: "Profie",
-          headerShown: false,
-          tabBarIcon: ({ focused }) => (
-            <TabBarIcon focused={focused} icon={icons.person} title="Home" />
-          ),
-        }}
-      />
+      {tabs.map(({ name, title, icon }) => (
+        <Tabs.Screen
+          key={name}
+          name={name}
+          options={{
+            title,
+            headerShown: false,
+            tabBarIcon: ({ focused }) => (
+              <TabBarIcon focused={focused} icon={icon} title={title} />
+            ),
+          }}
+        />
+      ))}
     </Tabs>
   );
 };
