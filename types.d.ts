@@ -24,3 +24,9 @@ type GlobalContextType = {
     loading: boolean
     refetch: (newParams?: Record<string, string | number>) => Promise<void>
 }
+
+type tabBarIconProps = {
+  focused: boolean
+  icon: any
+  title: string
+}
