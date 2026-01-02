@@ -1,6 +1,8 @@
 import { View, Text, Image } from "react-native";
 import React from "react";
 
+
+
 const TabBarIcon = ({ focused, icon, title, ...props }: tabBarIconProps) => {
   return (
     <View className="flex-1 mt-3 flex flex-col items-center gap-1" {...props}>
