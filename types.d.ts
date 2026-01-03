@@ -30,3 +30,7 @@ type tabBarIconProps = {
   icon: any;
   title: string;
 };
+
+type featureCardProps = {
+  onPress?: () => void;
+}
